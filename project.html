@@ -1,5 +1,73 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tradução de Alemão</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="keywords" content="store Pc`s, Computer, Sell, Buy, Cheap"/>
+    <meta name="description" content="loja on-line for translate"/>
+    <meta name="author" content="Mariana Garcia"/>
+    <link rel="stylesheet" type="text/css" href="style5.css"/>
+    <script type="text/javascript" src="banner5.js"></script>
+</head>
 <body>
-<h1> hello </h1>
+    <!-- Início da barra superior (topbar) -->
+	<div id="topbar">
+		<img src="logo1.png" alt="logotipo" title="logotipo"/> <!-- Imagem do logotipo -->
+		<ul>
+			<li><a href="index5_2.html">Principal</a></li> <!-- Link para a página principal -->
+			<li><a href="sobre.html">Sobre</a></li> <!-- Link para a página "Sobre" -->
+			<li><a href="catálogo.html">Catálogo</a></li> <!-- Link para a página de catálogo -->
+			<li><a href="contacto.html">Contacto</a></li> <!-- Link para a página de contacto -->
+		</ul>
+	</div>
+    <!-- Fim da barra superior (topbar) -->
+
+	<div class="wrapper">
+		<div id="content">
+			<div class="banner2">
+				<img id="banner" src="destaque-home.jpeg" alt="destaque-home" title="destaque-home"/>
+			</div>
+			<div class="buttons">
+				<input type="button" value="Start" onclick="startBanner();"> <!-- Botão para iniciar o banner -->
+				<input type="button" value="Stop" onclick="stopBanner();"> <!-- Botão para parar o banner -->
+			</div>
+			<div class="conteudo">
+				<img src="translate.jpg" width="150px" height="150px" alt="translate" title="translate"/> <!-- Imagem "translate" -->
+				<p>Por página traduzida = 30€</p> <!-- Texto informativo -->
+				<img src="alemao-portugues.png" width="150px" height="150px" alt="alemao e portugues" title="alemao e portugues"/> <!-- Imagem "alemao e portugues" -->
+			</div>
+		</div>
+		<div id="footer">
+			<ul>
+				<li><a href="https://www.facebook.com/marianoka"><img src="facebook.png" width="40px" height="40px" alt="facebook" title="facebook"/></a></li> <!-- Link para o Facebook -->
+				<li><a href="https://www.instagram.com/mariana14.02/"><img src="instagram.png" width="40px" height="40px" alt="instagram" title="instagram"/></a></li> <!-- Link para o Instagram -->
+				<li><a href="https://twitter.com/_garcia1402"><img src="twitter.jpg" width="40px" height="40px" alt="twitter" title="twitter"/></a></li> <!-- Link para o Twitter -->
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var bannerIndex = 0; // Variável que controla o índice do banner atual
+		var banners = ["destaque-home.jpeg", "destaque-home-2.jpg"]; // Array com os nomes das imagens do banner
+		var bannerInterval; // Variável que armazena o intervalo de tempo para troca de banners
+
+		function showBanner() {
+			var banner = document.getElementById("banner"); // Obtém o elemento da imagem do banner pelo ID
+			banner.src = banners[bannerIndex]; // Define o src da imagem com base no bannerIndex
+			bannerIndex = (bannerIndex + 1) % banners.length; // Atualiza o bannerIndex para o próximo banner no array
+		}
+
+		function startBanner() {
+			bannerInterval = setInterval(showBanner, 4000); // Inicia o intervalo para trocar o banner a cada 4 segundos (4000 milissegundos)
+		}
+
+		function stopBanner() {
+			clearInterval(bannerInterval); // Para o intervalo, interrompendo a troca automática de banners
+		}
+
+		window.onload = function() {
+			startBanner(); // Quando a janela é carregada, inicia automaticamente o banner
+		};
+
+	</script>
 </body>
 </html>
